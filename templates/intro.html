@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosine Calculator Introduction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='intro_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Cosine Calculator</h1>
+        <p>This tool allows you to calculate the cosine of an angle using the Taylor series expansion. You can input angles in either degrees or radians.</p>
+        
+        <h2>How to Use</h2>
+        <ul>
+            <li>Select whether your input angle is in degrees or radians.</li>
+            <li>Enter your angle value. You can also use 'pi' in your input (e.g., 'pi', '2*pi').</li>
+            <li>Click the "Calculate" button to see the result.</li>
+        </ul>
+
+        <h2>Methods Used</h2>
+        <p>The following methods are used in this program:</p>
+        <ul>
+            <li><strong>Factorial Function:</strong> Computes the factorial of a number, which is necessary for the Taylor series expansion.</li>
+            <li><strong>Coterminal Angle Function:</strong> Adjusts the input angle to be within the range of 0 to 2π.</li>
+            <li><strong>Taylor Series Expansion:</strong> Uses the Taylor series to approximate the cosine of the angle. The formula used is:
+                <pre>cos(x) = ∑(−1)^n * (x^(2n)) / (2n)!</pre>
+                This series continues with the terms getting smaller, providing a more accurate approximation with more iterations.
+            </li>
+        </ul>
+
+        <h2>Implementation Details</h2>
+        <p>Here are the detailed steps of the implementation:</p>
+        <ul>
+            <li>The program starts by importing the necessary libraries and defining the factorial function.</li>
+            <li>The coterminal function ensures the angle is within the standard range of 0 to 2π.</li>
+            <li>The Taylor series function calculates the cosine using a loop that iterates to improve accuracy.</li>
+            <li>The user interacts with the program by inputting an angle and choosing whether it is in degrees or radians.</li>
+            <li>The program handles errors and ensures the output is correctly signed based on the quadrant of the angle.</li>
+        </ul>
+
+        <form action="{{ url_for('calculator') }}">
+            <button type="submit">Try Now</button>
+        </form>
+    </div>
+</body>
+</html>

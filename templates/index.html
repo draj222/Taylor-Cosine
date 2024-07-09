@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosine Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="bold-green">Cosine Calculator</h1>
+        <form id="cosine-form">
+            <label for="angle_type">Radians (r) or Degrees (d):</label>
+            <select id="angle_type" name="angle_type">
+                <option value="r">Radians</option>
+                <option value="d">Degrees</option>
+            </select>
+            <label for="angle_input">Enter the angle, or 'pi' for π:</label>
+            <input type="text" id="angle_input" name="angle_input" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
